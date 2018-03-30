@@ -1,0 +1,5 @@
+querystring.stringify({name: 'scott', course: ['jade', 'node'], form: ''})
+querystring.stringify({name: 'scott', course: ['jade', 'node'], form: ''}, ',')
+querystring.stringify({name: 'scott', course: ['jade', 'node'], form: ''}, ',', ':')
+querystring.parse('name=scott&course=jade&course=node&form=')
+querystring.escape('<啦啦>')
