@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>This is a test.</p>
+    <button id="click">点击</button>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+       $('#click').click(function() {
+           $.post('./node-read.js',
+                {
+                    "name": "jj"
+                },
+                function(err, data) {
+                    console.log("数据: \n" + data + "\n状态: " + status);
+                }
+           )
+       })
+    </script>
+</body>
+</html>
