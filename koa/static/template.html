@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
     <h1>This is a test.</h1>
+    <form>
+        <input type="text" value="" id="text">
+        <button type="button" id="submit">发送</button>
+    </form>
+    <script>
+       $('#submit').on('click', function() {
+           var data = $('#text').val();      
+           $.ajax({
+               url: '/',
+               type: 'POST',
+            //    dataType: 'json',
+               data: data,
+               success: function(data) {
+                   console.log(data);
+               },
+               error: function (jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                }
+           })
+       });
+    </script>
 </body>
 </html>
